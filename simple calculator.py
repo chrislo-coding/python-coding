@@ -24,31 +24,25 @@ elif(cal==4):
     print(cal_div(n1,n2))
 else:
     print("四則運算代碼輸入錯誤")
-    
-  
-#0125 add use "class" to do
-class calculator:
-    def __init__(self,n1,n2):
-        self.n1=n1
-        self.n2=n2
-    def cal_plus(self):
-        print(self.n1,"+",self.n2,"=",self.n1+self.n2)
-    def cal_minus(self):
-        print(self.n1,"-",self.n2,"=",self.n1-self.n2) 
-    def cal_mul(self):
-        print(self.n1,"*",self.n2,"=",self.n1*self.n2)
-    def cal_div(self):
-        print(self.n1,"/",self.n2,"=",self.n1/self.n2)
-        
-n1=eval(input("請輸入第一個數字: "))
-n2=eval(input("請輸入第二個數字: "))
-cal=eval(input("1.加\n2.減\n3.乘\n4.除\n請輸入四則運算代碼: "))
 
-if (cal==1):
-    data=calculator(n1,n2).cal_plus()
-elif (cal==2):
-    data=calculator(n1,n2).cal_minus()
-elif (cal==3):
-    data=calculator(n1,n2).cal_mul()
-elif (cal==4):
-    data=calculator(n1,n2).cal_div()
+#0126 use class 
+
+class calculator:
+    def __init__(self,fun):
+        self.fun=fun
+    def calculator(self,x,y):
+        if (self.fun=="1"):
+            print(x,"+",y,"=",x+y)
+        elif (self.fun=="2"):
+            print(x,"-",y,"=",x-y)
+        elif (self.fun=="3"):
+            print(x,"*",y,"=",x*y)
+        elif (self.fun=="4"):
+            print(x,"/",y,"=",x/y)
+        else:
+            print("輸入錯誤")
+oper=input("1. 加 2.減 3.乘 4.除\n輸入代碼： ")
+x=eval(input("輸入第一個數字： "))
+y=eval(input("輸入第二個數字： "))
+data=calculator(oper)
+data.calculator(x,y)
